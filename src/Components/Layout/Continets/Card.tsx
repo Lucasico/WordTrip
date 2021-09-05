@@ -1,6 +1,7 @@
 import { Box,Image,Badge } from '@chakra-ui/react'
 import { MdStar } from "react-icons/md";
 import { useColorMode } from '@chakra-ui/color-mode'
+
 type cardProps = {
   imageUrl: string,
   imageAlt: string,
@@ -10,8 +11,8 @@ type cardProps = {
   formattedPrice: string,
   reviewCount: number,
   rate:number
-
 }
+  
 export function Card({imageUrl,imageAlt,beds,baths,title,formattedPrice,reviewCount,rate}:cardProps){
   const { colorMode, toggleColorMode } = useColorMode()
   return(

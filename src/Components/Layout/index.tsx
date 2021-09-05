@@ -13,6 +13,7 @@ export function Layout({children}:LayoutProps){
       h="100vh" 
       flexDirection="column"
       alignItems="center"
+      overflowX="hidden"
     >
       {
         children
