@@ -7,7 +7,7 @@ export function Travels() {
     
     <Flex
       marginTop="5rem"
-      marginBottom="5rem"
+      marginBottom="2rem"
       minWidth="80vw" 
       minHeight={100}
       alignItems="center"
@@ -69,6 +69,5 @@ export function Travels() {
         />
       </Box>
     </Flex>
-  
   )
 }

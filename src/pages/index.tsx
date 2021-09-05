@@ -1,18 +1,22 @@
 import type { NextPage } from 'next'
-import { useColorMode } from '@chakra-ui/color-mode'
 import { Layout } from '../Components/Layout'
 import { Header } from '../Components/Layout/Header'
 import { Banner } from '../Components/Layout/Banner'
 import { Travels } from '../Components/Layout/Travels'
-
+import { LetsGo } from '../Components/Layout/LetsGo'
+import { Continets }  from '../Components/Layout/Continets'
+import { Footer } from '../Components/Layout/Footer/Footer'
 const Home: NextPage = () => {
-  const { colorMode, toggleColorMode } = useColorMode()
+
   return (
     <>
       <Layout>
         <Header />
         <Banner />
         <Travels />
+        <LetsGo />
+        <Continets />
+        <Footer />
       </Layout>
     </>
   )
