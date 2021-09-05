@@ -1,12 +1,13 @@
-import { useColorMode } from '@chakra-ui/color-mode'
-import { Flex, Box, Img, Text as TextChakra } from "@chakra-ui/react";
+
 import { Text } from './components/Text';
+import { Flex, Box } from "@chakra-ui/react";
 export function Travels() {
 
-  const { colorMode } = useColorMode()
   return(
+    
     <Flex
       marginTop="5rem"
+      marginBottom="5rem"
       minWidth="80vw" 
       minHeight={100}
       alignItems="center"
@@ -23,8 +24,6 @@ export function Travels() {
           text="Vida noturna"
         />
       </Box>
-
-
       <Box
         display="flex"
         alignItems="center"
@@ -70,5 +69,6 @@ export function Travels() {
         />
       </Box>
     </Flex>
+  
   )
 }
