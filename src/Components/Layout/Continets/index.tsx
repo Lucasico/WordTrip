@@ -1,8 +1,10 @@
-import {properties} from './mocks'
-import { Flex, Box} from '@chakra-ui/react'
+import { useWideVersion } from '../../../hooks/useWideVersion';
+import { properties } from './mocks'
+import { Flex } from '@chakra-ui/react'
 import { Card } from './Card';
 
 export function Continets(){
+  const { isWideVersion } = useWideVersion()
   return(
     <>
     <Flex
@@ -10,8 +12,9 @@ export function Continets(){
       height="28.125rem"    
       marginTop="2rem"
       marginBottom="2rem"
-      justifyContent="space-between"
-     
+      alignItems="center"
+      justifyContent={"space-between"}
+      flexDirection={isWideVersion ? "row" : "column"}
    >
      {
        properties.map((props, index) => {

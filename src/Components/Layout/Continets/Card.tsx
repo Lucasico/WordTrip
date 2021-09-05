@@ -1,3 +1,4 @@
+import { useWideVersion } from '../../../hooks/useWideVersion';
 import { Box,Image,Badge } from '@chakra-ui/react'
 import { MdStar } from "react-icons/md";
 import { useColorMode } from '@chakra-ui/color-mode'
@@ -14,16 +15,27 @@ type cardProps = {
 }
   
 export function Card({imageUrl,imageAlt,beds,baths,title,formattedPrice,reviewCount,rate}:cardProps){
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode } = useColorMode()
+  const {isWideVersion} = useWideVersion()
   return(
-      <Box maxW="16%" borderWidth="1px" borderRadius="lg" borderColor="#FFBA08" overflow="hidden" >
-        <Image src={imageUrl} alt={imageAlt} height="12rem" />
+      <Box 
+        maxW={isWideVersion ? "16%" : "100%"}
+        borderWidth="1px"
+        borderRadius="lg"
+        borderColor="#FFBA08"
+        overflow="hidden"
+        display="flex"
+        flexDirection={isWideVersion ? "column" : "row"}
+        justifyContent={isWideVersion ? "":"space-between"}
+        marginBottom={isWideVersion ? "0" : "1rem"}
+      >
+        <Image src={imageUrl} alt={imageAlt} height={isWideVersion ? "12rem" : "100%"} />
 
-        <Box p="6">
+        <Box p = {isWideVersion ? "6" : "2 2 1 0"}>
           <Box d="flex" alignItems="baseline">
             <Badge 
               borderRadius="full"
-              px="2"
+              px="0"
               colorScheme="orange"
               color={ colorMode === "light" ? "#47585B" : "#FFBA08"}
             >
