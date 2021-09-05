@@ -1,7 +1,10 @@
+import { useWideVersion } from '../../../hooks/useWideVersion'
 import { useColorMode } from '@chakra-ui/color-mode'
-import {Box, Flex,Text,Image} from "@chakra-ui/react"
+import {Box, Flex,Text,Image,useBreakpointValue} from "@chakra-ui/react"
 export function Banner(){
   const { colorMode } = useColorMode()
+  const {isWideVersion} = useWideVersion()
+
   return (
     <Flex 
       w="100vw" 
@@ -21,41 +24,45 @@ export function Banner(){
       >
         <Box>
           <Text 
-            fontSize="1.7rem"
+            fontSize={["1.0rem","1.3rem","1.7rem"]}
             color={colorMode === "light" ? "white" : "#FFBA08"}
           >
             5 continentes,
           </Text> 
           <Text 
-            fontSize="1.7rem"
-            color={colorMode === "light" ? "white" : "#FFBA08"}
+           fontSize={["1.0rem","1.3rem","1.7rem"]}
+           color={colorMode === "light" ? "white" : "#FFBA08"}
             paddingBottom="1.5rem"
           >
             infinitas possibilidades
           </Text>
           <Text
-           fontSize="1.2rem"
+           fontSize={["0.8rem","1.0rem","1.2rem"]}
            color={colorMode === "light" ? "white" : "#FFBA08"}
           >
             Chegou a hora de tirar do papel a viagem que você 
           </Text>
           <Text
-           fontSize="1.2rem"
+           fontSize={["0.8rem","1.0rem","1.2rem"]}
            color={colorMode === "light" ? "white" : "#FFBA08"}
           >
             sempre sonhou
           </Text>
         </Box>
-        <Box display="flex">  
-          <Image 
-            src="/img/Airplane.svg" 
-            alt="word trip"
-            width="25.06rem"
-            height="18.94rem"
-            marginTop="7rem"
-            transform= "rotate(5deg)"
-          />
-        </Box>
+        {
+          isWideVersion && (
+            <Box display="flex">  
+              <Image 
+                src="/img/Airplane.svg" 
+                alt="word trip"
+                width="25.06rem"
+                height="18.94rem"
+                marginTop="7rem"
+                transform= "rotate(5deg)"
+              />
+            </Box>
+          )
+        }
       </Flex>
     </Flex> 
   )

@@ -6,6 +6,7 @@ import { Travels } from '../Components/Layout/Travels'
 import { LetsGo } from '../Components/Layout/LetsGo'
 import { Continets }  from '../Components/Layout/Continets'
 import { Footer } from '../Components/Layout/Footer/Footer'
+
 const Home: NextPage = () => {
 
   return (

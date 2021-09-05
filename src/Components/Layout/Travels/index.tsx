@@ -1,8 +1,10 @@
 
 import { Text } from './components/Text';
 import { Flex, Box } from "@chakra-ui/react";
+import { useWideVersion } from '../../../hooks/useWideVersion';
 export function Travels() {
-
+  const { isWideVersion } = useWideVersion()
+  
   return(
     
     <Flex
@@ -12,6 +14,8 @@ export function Travels() {
       minHeight={100}
       alignItems="center"
       justifyContent="space-between"
+      flexDirection={isWideVersion ? "row" : "column"}
+    //  flexWrap="wrap"
     >
       <Box
         display="flex"
